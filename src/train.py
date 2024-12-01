@@ -22,7 +22,7 @@ if not run_all_tests(model):
 summary(model, input_size=(1, 28, 28))
 
 torch.manual_seed(1)
-batch_size = 128
+batch_size = 64
 
 kwargs = {'num_workers': 1, 'pin_memory': True} if use_cuda else {}
 train_loader = torch.utils.data.DataLoader(
@@ -78,7 +78,8 @@ def test(model, device, test_loader):
     return accuracy  # Return accuracy for scheduler
 
 model = Net().to(device)
-optimizer = optim.Adam(model.parameters(), lr=0.01)  # Increased initial learning rate
+optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=0.001)
+#optimizer = optim.Adam(model.parameters(), lr=0.01)  # Increased initial learning rate
 scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=2, verbose=True)
 
 # Increase number of epochs for better convergence
