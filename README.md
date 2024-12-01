@@ -14,6 +14,6 @@ This project implements a CNN model for MNIST digit classification with PyTorch.
 - Other dependencies listed in requirements.txt
 
 ## Training Logs
-Check out the [training logs](src/train.log) to see the model's performance and training progress.
+- Check out the [training logs](train.log) to see the model's performance and training progress.
 
 ## Project Structure
