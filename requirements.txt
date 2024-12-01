@@ -1,4 +1,7 @@
-torch>=2.0.0
-torchvision>=0.15.0
+--find-links https://download.pytorch.org/whl/cpu/torch_stable.html
+torch>=2.0.0+cpu
+torchvision>=0.15.0+cpu
 tqdm>=4.65.0
 torch-summary>=1.4.5
+pytest>=7.0.0
+flake8>=4.0.0
